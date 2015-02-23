@@ -125,7 +125,7 @@ class EditFollowUpForm(forms.ModelForm):
 
 class TicketForm(CustomFieldMixin, forms.Form):
     queue = forms.ChoiceField(
-        label=_('Queue'),
+        label=_('Ticket Type'),
         required=True,
         choices=()
         )
@@ -134,7 +134,7 @@ class TicketForm(CustomFieldMixin, forms.Form):
         max_length=100,
         required=True,
         widget=forms.TextInput(attrs={'size':'60'}),
-        label=_('Summary of the problem'),
+        label=_('Subject'),
         )
 
     submitter_email = forms.EmailField(
@@ -147,14 +147,14 @@ class TicketForm(CustomFieldMixin, forms.Form):
 
     body = forms.CharField(
         widget=forms.Textarea(attrs={'cols': 47, 'rows': 15}),
-        label=_('Description of Issue'),
+        label=_('Summary'),
         required=True,
         )
 
     assigned_to = forms.ChoiceField(
         choices=(),
         required=False,
-        label=_('Case owner'),
+        label=_('Office Staff Member'),
         help_text=_('If you select an owner other than yourself, they\'ll be '
             'e-mailed details of this ticket immediately.'),
         )
