@@ -1,4 +1,5 @@
 *.pyc
+build/*
 dist
 build/
 django_helpdesk.egg-info
