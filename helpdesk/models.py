@@ -1312,7 +1312,14 @@ class CustomField(models.Model):
     class Meta:
         verbose_name = _('Custom field')
         verbose_name_plural = _('Custom fields')
+"""
+class CustomfieldQueues(models.Model):
+    customfield = models.ForeignKey('CustomField')
+    queue = models.ForeignKey('Queue')
 
+    class Meta:
+        db_table = 'helpdesk_customfield_queues'
+"""
 
 class TicketCustomFieldValue(models.Model):
     ticket = models.ForeignKey(
